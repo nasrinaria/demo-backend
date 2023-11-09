@@ -14,11 +14,6 @@ jobs:
 
     - name: Parse client_payload
       run: |
-        payload="${{ github.event.client_payload }}"
-        echo "Received Payload: $payload"
-        
-        # Parse JSON using jq
-        parsed_data=$(echo "$payload" | jq .)
-        echo "Parsed Data: $parsed_data"
-
+       payload=${{ toJson(github.event.client_payload) }}
+       echo "Parsed Payload: $payload"
           
