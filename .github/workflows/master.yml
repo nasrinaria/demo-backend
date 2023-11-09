@@ -6,11 +6,19 @@ on:
       - main
 
 jobs:
-  build:
-    name: Run Test
+  parse-data:
     runs-on: ubuntu-latest
     steps:
-      - name: Parse client_payload 
-        run: |
-          echo "Parsed Payload"
+    - name: Get branch url
+      uses: actions/checkout@v2
+
+    - name: Parse client_payload
+      run: |
+        payload="${{ github.event.client_payload }}"
+        echo "Received Payload: $payload"
+        
+        # Parse JSON using jq
+        parsed_data=$(echo "$payload" | jq .)
+        echo "Parsed Data: $parsed_data"
+
           
