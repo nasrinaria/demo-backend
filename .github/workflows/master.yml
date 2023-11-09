@@ -7,10 +7,11 @@ on:
 
 jobs:
   build:
-    name: Run Api
+    name: Run Test
     runs-on: ubuntu-latest
     steps:
-      - name: Build API
+      - name: Parse client_payload 
         run: |
-          echo "Run acceptance test agianes ${{ github.event.client_payload }} toJson('{"test": "1"}').test ${{ toJson(github.event.client_payload).url }}"
-          sleep 10s
+          payload=${{ toJson(github.event.client_payload) }}
+          echo "Parsed Payload: $payload"
+          
