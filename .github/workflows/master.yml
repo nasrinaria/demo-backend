@@ -12,6 +12,5 @@ jobs:
     steps:
       - name: Parse client_payload 
         run: |
-          payload=${{ toJson(github.event.client_payload) }}
-          echo "Parsed Payload: $payload"
+          echo "Parsed Payload"
           
