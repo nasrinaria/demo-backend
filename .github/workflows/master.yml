@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get branch url
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Parse client_payload
       run: |
