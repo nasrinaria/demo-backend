@@ -1,4 +1,4 @@
-name: Deploy
+name: BrowserStack Test Core PR
 on:
   workflow_dispatch:
   push:
@@ -14,6 +14,6 @@ jobs:
 
     - name: Parse client_payload
       run: |
-       payload=${{ toJson(github.event.client_payload) }}
+       payload=${{ github.event.client_payload }}
        echo "Parsed Payload: $payload"
           
