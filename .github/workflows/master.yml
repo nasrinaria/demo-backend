@@ -10,6 +10,6 @@ jobs:
     - name: Get branch url
       uses: actions/checkout@v3
       with:
-        url: ${{ github.event.inputs.client_payload.ur; }}
-    - run: echo ${{ github.event.client_payload.url}}
+        url: ${{ github.event.inputs.client_payload.url }}
+    - run: echo ${{ github.event.client_payload.url }}
           
