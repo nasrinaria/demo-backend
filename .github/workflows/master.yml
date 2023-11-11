@@ -1,6 +1,7 @@
 name: BrowserStack Test Core PR
 on:
-  workflow_dispatch:
+  repository_dispatch:
+    types: 'test-core-pr'
 
 jobs:
   parse-data:
